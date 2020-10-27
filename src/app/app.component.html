@@ -1,0 +1,94 @@
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #side
+  
+   mode="side" color="primary" > 
+    <div class="menuHead">
+      <span> Menu Bar </span>
+      <button id="close" mat-icon-button matTooltip='Menu' (click)="side.toggle()" aria-hidden="true">
+        <mat-icon>close</mat-icon>
+      </button>  
+    </div>
+    <div class="example-button-container">
+        <mat-icon>account_circle</mat-icon>
+    </div>
+    
+    <div class="btnsearch">
+      <input matInput  type="text" placeholder="Serach">
+      <button disabled mat-button>
+          <mat-icon>search</mat-icon>
+      </button>
+  </div>
+  <div class="">
+    <div class="menubtn" *ngFor="let data of menuBtName " >
+      <span> {{data.tooltip}} </span>
+      <button  mat-icon-button matTooltip="{{data.tooltip}}"  (click)="menuClick(data)" aria-hidden="true">
+            <mat-icon>{{data.name}}</mat-icon>
+      </button> 
+    </div>
+  </div>
+</mat-sidenav>
+  <mat-sidenav-content>
+    <div class="col-12 pos">
+      <mat-toolbar class="headerpos" color="primary">
+        <mat-toolbar-row>
+          <div >
+            <button mat-icon-button matTooltip='Menu' (click)="side.toggle()" aria-hidden="true">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+          <span class="fram_toolBar col- ">Welcome to Angular page</span>
+          <span class="menu-spacer"></span>
+          <div fxShow="true" fxHide.lt-md>
+          </div>
+    
+          <!-- <div class="fram_btn">
+            <button mat-button [matMenuTriggerFor]="aboveMenu" class="buttoncls" matTooltip='Sign In' mat-icon-button>
+              <mat-icon>account_circle</mat-icon>
+            </button>
+            <mat-menu #aboveMenu="matMenu" yPosition="above">
+    
+              <div [hidden]="!frmbtnDis">
+                <button color="primary" mat-menu-item (click)="signin('Add')">
+                  <mat-icon> add_circle_outline</mat-icon>
+                  <span>Add</span>
+                </button>
+              </div>
+    
+    
+              <div [hidden]="frmbtnDis">
+                <button color="primary" mat-menu-item (click)="signin('Edit')">
+                  <mat-icon>edit</mat-icon>
+                  <span>Edit</span>
+                </button>
+              </div>
+    
+              <div [hidden]="frmbtnDis">
+                <button color="primary" mat-menu-item (click)="signin('Delete')">
+                  <mat-icon>delete_forever</mat-icon>
+                  <span>Delete</span>
+                </button>
+              </div>
+    
+            </mat-menu>
+          </div> -->
+          <div [hidden]='false' class="fram_btn">
+            <button mat-icon-button matTooltip='Logout' (click)="Logout()" aria-hidden="true">
+              <mat-icon>exit_to_app</mat-icon>
+            </button>
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <div class="commonCss">
+
+        <router-outlet ></router-outlet>
+      </div>
+    </div>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+

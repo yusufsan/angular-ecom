@@ -1,0 +1,38 @@
+.example-form-field {
+    /* width: 200px; */
+    width: 100%;
+  }
+.md-card
+{
+    width: 30%;
+}
+@media  screen and  (max-width : 768px){
+
+  .col_1{ width: 100%;         }
+  /* .col_2{ margin-left: -4%;} */
+
+} 
+@media  screen and  (min-width : 768px){
+
+  .col_2{ margin-left: 60%;         }
+
+} 
+
+.col_1{margin-top: 3%;}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-size: medium;
+} 
+.custom-dialog-container .mat-dialog-container {
+    
+  height: 200px;
+  width: 500px;
+  padding: 10px;
+
+}
+/* #ctoolbar{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */

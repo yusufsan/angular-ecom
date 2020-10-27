@@ -1,0 +1,11 @@
+<mat-toolbar mat-dialog-title color="primary">
+    <span> Your current location is: </span>
+           <button  color="primary" mat-mini-fab mat-dialog-close>
+            <mat-icon>close</mat-icon></button>
+</mat-toolbar>
+
+    <agm-map style="height:350px"  [zoom]='19' [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+
+    <button>

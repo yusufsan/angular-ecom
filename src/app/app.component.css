@@ -1,0 +1,185 @@
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+  .example-button-row button,
+  .example-button-row a {
+    margin-right: 8px;
+  }
+
+  @media screen and (min-width: 768px)
+  {   
+     .tilte{ margin-left: 45%;}    
+     .col-btn{ margin-right: 3%; }
+     .col1-btn{ margin-right: 5%;
+      padding-left: 2%;
+               }
+               
+
+  }
+
+  @media  screen and  (max-width : 768px){
+
+   .col_1{ width: 100%;}
+   .tilte{ margin-left: 25%;} 
+ } 
+ .menu-spacer {
+  flex: 1 1 auto;
+}
+
+.sidenav
+{
+  background-color: rgb(176, 208, 218);
+}
+
+@media only screen and (min-width : 768)
+{
+  .fram_toolBar{margin-left: 40%}
+  .fram_btn{margin-right: 16px;}
+  .footer{ margin-top: 46%;}   
+}
+@media only screen and (max-width : 768)
+{   .footer{  margin-top: 87%;}
+}
+
+[class*="col-"] {
+  width: 100%;
+
+}
+.headerpos{
+
+position: fixed;
+top: 0;
+left: 0;
+}
+
+.footer{ position: fixed;}   
+.mat-menu-item {
+  color: blue !important;
+}
+
+button.mat-menu-item{
+    background-color: white;
+}
+
+button.mat-menu-item:hover {
+    background-color: #b8b9beb7;
+    color: #fff !important;
+}
+/* .example-container {
+  width: 400px;
+  height: 200px;
+  margin: 12px;
+  border: 1px solid #555;
+}
+
+mat-drawer-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+ */
+.mat-sidenav{
+  background-color: #3F51B5;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 11%;
+  height: 100%;
+  width: 20%;    
+}
+@media only screen and (max-width : 580px){
+
+  .mat-sidenav{
+    background-color: #3F51B5;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 11%;
+    height: 100%;
+    width: 100%;    
+  }
+  .commonCss{
+    margin-top: 25%;
+      margin-bottom: 80%;
+  }
+}
+
+
+@media only screen and (min-width : 768px){
+
+  .commonCss{
+    margin-top: 5%;
+      margin-bottom: 40%;
+  }
+}
+
+.menuHead{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.menuHead > span{
+  margin-left: 35%;
+}
+
+.mat-sidenav-container{
+/* height: 100%;
+ */
+ top:0;
+ left: 0;
+}
+.btnsearch{
+display: flex;
+flex-direction: row;
+align-items: center;
+background-color: white;
+
+border-radius: 25px;
+text-align: center;
+/* background:transparent; */
+ opacity: 50%;
+border-radius: 25px;
+}
+.btnsearch > input{
+width: 50%;
+border: none;
+border-bottom: 1px solid;
+margin-left: 50px;
+color: black;
+}
+.menubtn
+{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+margin-top: 5%;
+}
+.menubtn:hover{
+color: white;
+background-color: #E91E63;
+padding-left: 10%;
+}
+
+
+.example-button-container {
+display: flex;
+justify-content: center;
+margin-bottom: 30%;
+}
+.example-button-container > mat-icon{
+font-size: 75px;
+width: 75px;
+}
+.mat-toolbar{
+box-shadow: 4px 2px 10px black;
+}
+
+.pos{
+display: flex;
+flex-direction: column;
+}

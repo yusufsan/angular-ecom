@@ -1,0 +1,45 @@
+
+
+    <div class="md-card col_1 col_2 ">
+        <mat-card>
+            <mat-toolbar color="primary" >
+                <h3> Log In </h3>
+    
+            </mat-toolbar>
+            <div>
+                <form [formGroup]="loginForm" (ngSubmit)="getVaule()">
+
+                    
+                    <mat-form-field class="example-form-field col_1">
+                        <input matInput type="text" class="form-control" placeholder="User Name" 
+                        formControlName="userName" id="userName" > 
+                    </mat-form-field>
+                    <div *ngIf="getFormControl('userName').invalid && (getFormControl('userName').dirty || getFormControl('userName').touched)"                   class="alert alert-danger">
+                    <mat-error *ngIf="getFormControl('userName').errors.required">  User Name is required.  </mat-error>
+                   </div>
+
+                   <mat-form-field class="example-form-field col_1">
+                    <input matInput type="password" class="form-control" placeholder="Pass Word" 
+                    formControlName="passWord" id="passWord" 
+                    
+                    > 
+                </mat-form-field>
+                <div *ngIf="getFormControl('passWord').invalid && (getFormControl('passWord').dirty || getFormControl('passWord').touched)"                   class="alert alert-danger">
+                <mat-error *ngIf="getFormControl('passWord').errors.required">  PassWord is required.  </mat-error>
+               </div>
+
+               <!-- <button mat-button  matSuffix mat-icon-button aria-label="Clear" 
+                > 
+                <mat-icon matSuffix></mat-icon>
+                </button> 
+                    -->
+                    
+                <button  mat-raised-button [disabled]="!loginForm.valid" color="primary">Submit</button>
+                </form>
+            </div>
+        </mat-card>
+    </div>
+
+
+
+

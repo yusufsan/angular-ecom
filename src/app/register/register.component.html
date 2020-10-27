@@ -1,0 +1,105 @@
+<div class="md-card col_1 col_2 ">
+    <mat-card>
+        <mat-toolbar color="primary">
+            <h3> Registration In </h3>
+
+        </mat-toolbar>
+        <div>
+            <form [formGroup]="RegForm" (ngSubmit)="getValue()">
+
+
+
+                <div style="padding: 10%;">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>{{ ' Profile' }}</mat-card-title>
+                            <mat-card-subtitle>Profile Image</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="{{ this.imageData}}" alt="{{'profileData'}}">
+
+                        <mat-card-actions class="FlexSpeImgBtn">
+                            <button type="button" class="btnHover" mat-raised-button
+                                (click)="UploadBtn()">Upload</button>
+
+                            <!-- <input type="file" id="Upload" (change)="Upload($event)" hidden> -->
+
+                            <input type="file" id="UploadForm" (change)="onFileChange($event)" hidden />
+                            <button type="button" class="btnHover" mat-raised-button
+                                (click)="deleteImg()">Remove</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+
+                <div>
+                    
+                </div>
+
+                <mat-form-field class="example-form-field col_1">
+                    <input [disabled]=" data != '' ? true : false" matInput type="text" class="form-control" placeholder="User Name" formControlName="userName"
+                        id="userName">
+                </mat-form-field>
+                <div *ngIf="getFormControl('userName').invalid && (getFormControl('userName').dirty || getFormControl('userName').touched)"
+                    class="alert alert-danger">
+                    <mat-error *ngIf="getFormControl('userName').errors.required"> User Name is required. </mat-error>
+                </div>
+
+                <mat-form-field class="example-form-field col_1">
+                    <input matInput type="password" class="form-control" placeholder="Pass Word"
+                        formControlName="passWord" id="passWord">
+                </mat-form-field>
+                <div *ngIf="getFormControl('passWord').invalid && (getFormControl('passWord').dirty || getFormControl('passWord').touched)"
+                    class="alert alert-danger">
+                    <mat-error *ngIf="getFormControl('passWord').errors.required"> PassWord is required. </mat-error>
+                </div>
+
+                <mat-form-field class="example-form-field col_1">
+                    <input matInput type="password" class="form-control" placeholder="Confirm Pass Word"
+                        formControlName="conFirmpassWord" id="conFirmpassWord">
+                </mat-form-field>
+                <div *ngIf="getFormControl('conFirmpassWord').invalid && (getFormControl('conFirmpassWord').dirty || getFormControl('passWord').touched)"
+                    class="alert alert-danger">
+                    <mat-error *ngIf="getFormControl('conFirmpassWord').errors.required"> Confirm Pass Word is required.
+                    </mat-error>
+                    <mat-error *ngIf="getFormControl('conFirmpassWord').errors.mustMatch">
+                        Confirm Pass Word does not match with PassWord. </mat-error>
+
+                </div>
+
+
+                <mat-form-field class="example-form-field col_1">
+                    <input matInput type="email" required class="form-control" placeholder="Email Id"
+                        formControlName="emailid" id="emailid">
+                </mat-form-field>
+                <div *ngIf="getFormControl('emailid').invalid && (getFormControl('emailid').dirty || getFormControl('emailid').touched)"
+                    class="alert alert-danger">
+                    <mat-error *ngIf="getFormControl('emailid').errors.required"> Email Id is required. </mat-error>
+                    <mat-error *ngIf="getFormControl('emailid').errors.email"> Email Id is not valid. </mat-error>
+                </div>
+
+                <mat-form-field class="example-form-field col_1">
+                    <input matInput type="text" required class="form-control" placeholder="Mobile No"
+                        formControlName="mobileNo" id="mobileNo" minlength="10" maxlength="10">
+                </mat-form-field>
+                <div *ngIf="getFormControl('mobileNo').invalid && (getFormControl('mobileNo').dirty || getFormControl('mobileNo').touched)"
+                    class="alert alert-danger">
+                    <mat-error *ngIf="getFormControl('mobileNo').errors.required"> Mobile No. is required. </mat-error>
+                    <mat-error *ngIf="getFormControl('mobileNo').errors.pattern"> Number Only </mat-error>
+                    <mat-error
+                        *ngIf="getFormControl('mobileNo').errors?.minlength && !getFormControl('mobileNo').errors.pattern">
+                        minlength 10 </mat-error>
+
+                </div>
+                <div class="col_1" style="padding-bottom: 5px;">
+                    <button type="button" mat-raised-button (click)="openGoogleMap()" color="primary">Find My
+                        Location</button>
+                </div>
+                <div class="col_1 btn" style="padding-bottom: 5px;">
+                    <button  type="submit" mat-raised-button [disabled]="!RegForm.valid" color="primary">Save</button>
+                    <button type="button" mat-raised-button [routerLink]="['/RegisterGrid/']"
+                        color="primary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>
